@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Number类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1.Number类型包括哪些值？
+					-1 0 1 2 2.3 3.3 3.14 NaN Infinity
+					整数 小数 正数 负数 不是数字 无穷大都属于Number类型
+				2.isNaN():结果是true表示不是一个数字，结果是false表示是一个数字；
+				3.parseInt()函数；
+				4.parseFloat()函数;
+				5.Math.ceil() 函数（Math是数学类，数学类当中有一个函数叫做ceil()，作用是向上取整。）
+			 */
+			var n1 = 1;
+			var n2 = 3.14;
+			var n3 = -100;
+			var n4 = Infinity;
+			var n5 = NaN;
+			alert(typeof n1);
+			alert(typeof n2);
+			alert(typeof n3);
+			alert(typeof n4);
+			alert(typeof n5);
+			//关于NaN（表示not a number，不是一个数字，但属于Number类型）
+			//什么情况下结果是一个NaN呢？
+			//运算结果本来应该是一个数字，最后算完不是一个数字的时候，结果是NaN；
+			var a = 100;
+			var b = "abc";
+			alert(a/b);
+			var c = "abc";
+			var d = 10;
+			alert(c + d);
+			//Infinity（当除数为0的时候，结果为无穷大）
+			alert(10/0);
+			//思考：在JS当中10/3 = ？
+			alert(10/3);
+			//关于isNaN函数？
+			//用法：isNaN(数据),结果为true表示不是一个数字，结果是false表示是一个数字；
+			//isNaN ：表示 is not a Number;
+			function sum (a,b){
+				if(isNaN(a)||isNaN(b)){
+					alert("参与运算的必须是数字");
+					return;
+				}
+				return a+b;
+			}
+			sum(100,"abc");
+			alert(sum(100,200));
+			alert(parseInt(3.99));
+			alert(parseInt("3.999"));
+			alert(parseInt("3.14")+11);
+			alert(parseInt("3.2")+11);
+			alert(Math.ceil("2.1"));
+		</script>
+	</body>
+</html>

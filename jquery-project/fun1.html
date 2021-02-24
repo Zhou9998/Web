@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第一组函数的使用</title>
+		<style type="text/css">
+			div{
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			//在dom对象创建好后，绑定对象
+			$(function(){
+				$("#btn1").click(function(){
+					//val()获取dom数组中第一个对象的value属性值
+					 var text = $(":text").val();   
+					 alert(text);
+				})
+				$("#btn2").click(function(){
+					$(":text").val("三国演义");
+				})
+				$("#btn3").click(function(){
+					//获取div，text()无参数，获取dom对象的文本值，连接成一个字符串
+					alert($("div").text());
+				})
+				$("#btn4").click(function(){
+					//设置div的文本
+					alert($("div:first").text());
+				})
+				$("#btn5").click(function(){
+					//读取指定属性的值
+					alert($("#img1").attr("src"));
+				})
+				$("#btn6").click(function(){
+					//设置指定属性的指定值
+					$("img").attr("src","img/20201125111256.png");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" value="刘备" /><br />
+		<input type="text" value="关羽" /><br />
+		<input type="text" value="张飞" /><br /><br />
+		<div>1.我是第一个DIV</div>
+		<div>2.我是第二个DIV</div>
+		<div>3.我是第三个DIV</div><br />
+		<img src="img/u=916372080,1882032935&fm=26&gp=0.jpg"  id="img1"/>
+		<button id="btn1">获取第一个文本框的值</button><br />
+		<button id="btn2">设置所有文本框为新值</button><br />
+		<button id="btn3">获取div的所有文本</button><br />
+		<button id="btn4">获取第一个div的文本</button><br />
+		<button id="btn5">读取src属性的值</button><br />
+		<button id="btn6">设置img图片</button><br />
+	</body>
+</html>

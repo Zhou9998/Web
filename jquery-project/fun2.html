@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			div{
+				background-color: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn1").click(function(){
+					//使用remove删除父和子所有的dom对象
+					$("select").remove();
+				})
+				$("#btn2").click(function(){
+					//使用empty删除父和子所有的dom对象
+					$("select").empty();
+				})
+				$("#btn3").click(function(){
+					//使用append增加dom对象
+					//$("#fatcher").append("<input type='button' value='我是增加的按钮'/>");
+					//增加一个table
+					$("#fatcher").append("<table border=1><tr><td>第一列</td><td>第二列</td></tr></table>");
+				})
+				$("#btn4").click(function(){
+					//使用html()函数，获取数组中第一个dom对象的文本值(innerHTML)
+					alert($("span").text());//我是mysql数据库我是jdbc
+					alert($("span").html());//我是musq<b>数据库</b>
+				})
+				$("#btn5").click(function(){
+					//使用html(有参数)来设置dom对象的文本值
+					$("span").html("我是新的<b>数据</b>");
+				})
+				$("#btn6").click(function(){
+					//循环普通数组，非dom数组
+					var arr =  [1,2,3];
+					$.each(arr,function(index,element){
+						alert("=====");
+					})
+				})
+				$("#btn7").click(function(){
+					//循环json数组
+					var json = {
+						"name":"zhangsan",
+						"nianling":23,
+						"xingbie":"nan"
+					}
+					$.each(json,function(index,element){
+						alert("i是key,"+index+",n是值"+ element);
+					})
+				})
+				$("#btn8").click(function(){
+					//循环dom数组
+					var domArr = $(":text");
+					$.each(domArr,function(index,element){
+						//element是数组中的dom对象
+						alert("i是key,"+index+",n是值"+ element.value);
+					})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text" value="刘备" />
+		<input type="text" value="关羽" />
+		<input type="text" value="张飞" />
+		<input type="text" value="赵云" /><br>
+		<select>
+			<option value="老虎">老虎</option>
+			<option value="狮子">狮子</option>
+			<option value="猎豹">猎豹</option>
+		</select>
+		<br />
+		<select>
+			<option value="美洲">美洲</option>
+			<option value="亚洲">亚洲</option>
+			<option value="欧洲">欧洲</option>
+		</select>
+		<br />
+		<div id="fatcher">我是一个div</div>
+		<br />
+		<span>我是mysql<b>数据库</b></span>
+		<span>我是jdbc</span>
+		<br />
+		<br />
+		<button id="btn1">使用remove删除父和子对象</button><br />
+		<button id="btn2">使用empty删除子对象</button><br />
+		<button id="btn3">使用append增加dom对象</button><br />
+		<button id="btn4">获取第一个dom的文本值</button><br />
+		<button id="btn5">设置span的所有dom的文本值</button><br />
+		<button id="btn6">循环普通数组</button><br />
+		<button id="btn7">循环json数组</button><br />
+		<button id="btn8">循环dom数组</button><br />
+	</body>
+</html>

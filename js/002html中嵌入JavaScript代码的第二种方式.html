@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+	<head>
+		<title>html中嵌入JavaScript代码的第二种方式</title>
+	</head>
+	<body>
+		<!--
+		javascript的脚本块在一个页面当中可以出现多次。没有要求。
+		javascript的脚本块出现位置也没有要求，随意。
+		-->
+		<!--第二种方式：脚本块的方式-->
+		<script type = "text/javascript">
+		/*
+			暴露在脚本块中的程序，在页面打开的时候执行
+			并且遵守自上而下的顺序依次逐行执行
+		*/
+
+
+		// JS代码的注释，这是单行注释。
+		/*
+		JS代码的多行注释。和java一样。
+		*/
+
+			window.alert("hello world");
+			window.alert("hello script")
+		</script>
+		<input type = "button" value = "hhh"/>
+	</body>
+</html>

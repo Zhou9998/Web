@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//单击按钮 获取文本框的value值
+			function fun1(){
+				var obj = $("txt1");
+				alert(obj.value);
+			}
+			function fun2(){
+				//alert(document.getElementById("txt2").value);
+				var obj = $("txt2");
+				alert(obj.value);
+			}
+			
+			//自定义方法，获取js中的dom对象
+			function $(domid){
+				var obj = document.getElementById(domid);
+				return obj;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt1" value="我是txt1" /><br />
+		<input type="text" id="txt2" value="我是txt2" /><br />
+		<input type="button" value="单击按钮 1" onclick="fun1()"/>
+		<input type="button" value="单击按钮 2" onclick="fun2()"/>
+	</body>
+</html>

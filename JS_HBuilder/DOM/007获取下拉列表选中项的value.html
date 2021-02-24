@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取下拉列表选中项的value\</title>
+	</head>
+	<body>
+<!-- 		<select onchange="alert(this.value)">
+		<option value=" ">--请选择省份--</option>
+		<option value="001">山东省</option>
+		<option value="002">陕西省</option>
+		<option value="003">山西省</option>
+		</select> -->
+		<script type="text/javascript">
+			window.onload = function(){
+				var provinceElt = document.getElementById("provinceList");
+				provinceElt.onchange = function(){
+					alert(provinceElt.value);
+				}
+			}
+		</script>
+		<select id="provinceList">
+			<option value=" ">--请选择省份--</option>
+			<option value="001">山东省</option>
+			<option value="002">陕西省</option>
+			<option value="003">山西省</option>
+		</select>
+	</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>object类型</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				Object类型：
+					1.Object类型是所有类型的 超类，自定义的任何类型默认继承Object;
+					2.Object类包括哪些属性？
+						prototype属性（常用的），作用是给类动态的拓展属性和函数。
+						constructor属性
+					3.Object类包括哪些函数？
+						toString（）
+						valueOf（）
+						toLocalString（）
+					4.在JS当中定义的类默认集成Object，会继承Object类中所有的属性以及函数。
+					换句话说，自己定义的类中也有prototype属性。
+					5.在JS当中怎么定义类？怎么new对象？
+						定义类的语法：
+							第一种方式：
+								function 类名(形参){
+									
+								}
+							第二种方式：
+								类名 = function(形参){
+									
+								}
+						创建对象的语法：
+							new 构造方法名(实参){
+								
+							}
+			 */
+			function sayHello(){
+				
+			}
+			//把sayHello当做一个普通的函数来调用；
+			sayHello();
+			//这种方式就是表示把sayHello当做一个类来创建对象；
+			var obj = new sayHello();
+			function student(){
+				alert("Student....")
+			}
+			student();
+			var stu = new student();
+			alert(stu);//[obect Object]
+			
+			//JS中类的定义，同时又是一个构造函数的定义
+			//在JS中类的定义和构造函数的定义是放在一起哎完成的
+			function User(a,b,c){
+				this.sno = a;
+				this.sname = b;
+				this.sage = c;
+			}
+			var u1 = new User(111,"zhangsan",30);
+			alert(u1.sno);
+			alert(u1.sname);
+			alert(u1.sage);
+			var u2 = new User(222,"lisi",40);
+			alert(u2.sno);
+			alert(u2.sname);
+			alert(u2.sage);		
+				
+			//访问一个对象的属性，还可以用这种语法
+			alert(u2["sno"]);
+			alert(u2["sname"]);
+			alert(u2["sage"]);
+			Emp = function(ename,sal){
+				this.ename = ename;
+				this.sal = sal;
+			}
+			var e1 = new Emp("SMITH",800);
+			alert(e1["ename"] + "," + e1["sal"]);
+			
+			Product = function(pno,pname,price){
+				this.pno = pno;
+				this.pname = pname;
+				this.price = price;
+				this.getPrice = function(){
+					return this.price;
+				}
+			}
+			var pro = new Product(111,"西瓜",100);
+			var pri = pro.getPrice();
+			alert(pri);
+			//可以通过prototype这个属性来给类动态拓展属性以及函数
+			Product.prototype.getPname = function(){
+				return this.pname;
+			}
+			
+			alert(pro.getPname());
+			String.prototype.suiyi = function(){
+				alert("aaaa");
+			}
+			"abc".suiyi();
+		</script>
+	</body>
+</html>
+<!--
+	java语言怎么定义类，怎么创建对象？（强类型）
+		public class User{
+			private String username;
+			private String password;
+			public User(){
+				
+			}
+			public User(String username,String password){
+				this.username = username;
+				this.password = password;
+			}
+		}
+		User user = new User();
+		User user = new User("lisi","123");
+		
+	JS语言怎么定义类，怎么创建对象？（弱类型）
+		User = function(username,password){
+			this.username = username;
+			this.password = password;
+		}
+		var u = new User();
+		var u = new User("zhangsan");
+		var u = new User("zhangsan","123");
+-->

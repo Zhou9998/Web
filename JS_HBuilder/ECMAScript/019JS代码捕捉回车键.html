@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS代码捕捉回车键</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.onload = function(){
+				var usernameElt = document.getElementById("username");
+				//回车键的键值是13，Esc的键值是27；
+				usernameElt.onkeydown = function(event){//event局部变量
+					//获取键值
+					if(event.keyCode == 13){
+						alert("正在进行验证!")
+					}
+				}
+			}  
+		</script>
+		<input type="text" id="username" />
+	</body>
+</html>

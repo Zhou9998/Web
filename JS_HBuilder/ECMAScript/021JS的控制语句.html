@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS的控制语句</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				1.if
+				2.switch
+				
+				3.while
+				4.do..while..
+				5.for循环
+				
+				6.break
+				7.contiune
+				
+				8.for..in语句(了解)
+				9.with语句(了解)
+			 */
+			//创建JS数组
+			var arr = [false,"abc",12,3.14];//JS数组中元素的类型随意，元素的个数随意
+			for (var i = 0; i < arr.length; i++) {
+				alert(arr[i]);
+			}
+			for(var i in arr){
+				alert(arr[i]);
+			}
+			User = function(username,password){
+				this.username = username;
+				this.password = password;
+			}
+			var u = new User("zhangsan","111");
+			alert(u.username +","+ u.password);
+			alert(u["username"]+","+ u["password"]);
+			alert(u.username);
+			alert(u.password);
+			with(u){
+				alert(username +","+password);
+			}
+		</script>
+	</body>
+</html>

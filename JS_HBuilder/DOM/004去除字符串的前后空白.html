@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>去除字符串的前后空白</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//低版本的IE浏览器不支持字符串的trim()函数，怎么办？
+			String.prototype.trim = function(){
+				return this.replace(/^\s+/,"").replace(/\s+$/,"");
+			}
+			window.onload = function(){
+				document.getElementById("btn").onclick = function(){
+					var username = document.getElementById("username").value;
+					username = username.trim();
+					alert(username); 
+				}
+			}
+		</script>
+		<input type="text" id="username" />
+		<input type="button" id="btn" value="获取用户名" />
+	</body>
+</html>

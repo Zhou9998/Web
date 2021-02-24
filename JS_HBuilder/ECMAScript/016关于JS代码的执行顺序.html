@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS代码的执行顺序</title>
+	</head>
+	<!-- load事件什么时候发生？页面元素全部加载完毕以后才会发生 -->
+	<body onload="ready()">
+			<script type="text/javascript">
+/* 				var mybtn = document.getElementById("btn")
+				alert(typeof mybtn);//onject
+				btn.onclick = function(){
+					alert("hhh") */
+				function ready(){
+					var mybtn = document.getElementById("btn")
+					btn.onclick = function(){
+					alert("hhh");
+					}
+				}
+			</script>
+			<input type="button" value="hello" id="btn"/>
+	</body>
+</html>

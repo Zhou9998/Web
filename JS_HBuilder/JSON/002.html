@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>复杂一点的JSON对象</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var user = {
+				"usercode" : 110,
+				"username" : "zhangsan",
+				"sex" : true,
+				"address" : {
+					"city" : "beijing",
+					"street" : "daxing",
+					"zipcode" : "1111111"
+				},
+				"aihao" : ["somke","dirnk","tangtou"]
+			};
+			alert(user.username + "居住在" + user.address.city);
+			/* 
+				请自行设置JSON格式的数据，这个JSON格式的数据可以描述整个班级中每一个学生的信息，以及总人数信息。
+			 */
+			var jsonData = {
+				"total" : 3,
+				"student" : [
+					{"name":"zhangsan","birth":"1998-11-23"},
+					{"name":"lisi","birth":"1998-11-24"}
+				]
+			};
+		</script>
+	</body>
+</html>
